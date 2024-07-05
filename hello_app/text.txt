@@ -1,0 +1,17 @@
+ docker compose -f docker-compose.yaml down
+
+ docker run --name mongodb -d -p 27017:27017 mongodb/mongodb-community-server:latest
+
+ docker exec -it mongodb mongosh
+ use deb
+db.greetings.insertMany([
+    {"greetings":"Hello Calicut"},
+    {"greetings":"Hello Kerala"},
+    {"greetings":"Hello India"},
+    {"greetings":"Hello World"}
+
+]);
+
+sudo docker compose -f docker-compose.yaml up -d
+
+ sudo docker compose -f docker-compose.yaml build --no-cache
